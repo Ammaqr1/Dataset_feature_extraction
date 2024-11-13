@@ -75,8 +75,10 @@ elif st.session_state.page == 'feature_extraction':
         # for i in range(int(no)):
     fe = Feature_extra(df,models_list[0])
     df3,insight = fe.feature_extracting()
+    st.header('New_column_created')
     st.write(df3.head())
     print(df3.head())
+    st.sidebar.header('old_columns')
     st.sidebar.write(old_features)
     st.write(df.columns)
         
