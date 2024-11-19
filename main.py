@@ -59,6 +59,7 @@ elif st.session_state.page == 'sqlite':
     data_dict = json.loads(df1[-1])
     df1 = pd.DataFrame(data_dict)
     
+    st.write(df1.head())
     Dc = DataChat(df1.head())
     prompt = st.chat_input('Ask anything related to Dataframe')
     
@@ -82,7 +83,7 @@ elif st.session_state.page == 'feature_extraction':
     old_features = st.session_state.df1.columns
     no = st.session_state.no
     df = st.session_state.df1
-    if st.button('Sumbit and run'):
+    if st.button('Run'):
         
         for i in range(int(no)):
             fe = Feature_extra(df,models_list[0])
