@@ -47,10 +47,6 @@ if st.session_state.page == 'welcome':
     
 elif st.session_state.page == 'sqlite':
     sqlite = SQLiteDatabase()
-    # db_name = st.text_input('Please enter your database name')
-    # tb_name = st.text_input('Please entera table_name name')
-    # if st.button('Submit',key='db_tb_name') and db_name and tb_name:
-    #     pass
     with st.spinner('Saving your dataframe into db'):
         sqlite.connect('titanic_data.db')
         sqlite.create_json_table('new_table_df')
@@ -60,6 +56,7 @@ elif st.session_state.page == 'sqlite':
     df1 = pd.DataFrame(data_dict)
     
     st.write(df1.head())
+    st.write('Ask any question related to the Dataset')
     Dc = DataChat(df1.head())
     prompt = st.chat_input('Ask anything related to Dataframe')
     
