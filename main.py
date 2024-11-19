@@ -56,7 +56,7 @@ elif st.session_state.page == 'sqlite':
     df1 = pd.DataFrame(data_dict)
     
     st.write(df1.head())
-    st.write('Ask any question related to the Dataset')
+    st.subheader('Ask any question related to the Dataset')
     Dc = DataChat(df1.head())
     prompt = st.chat_input('Ask anything related to Dataframe')
     
